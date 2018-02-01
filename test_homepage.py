@@ -10,8 +10,10 @@ def test_homepage():
     s('#anchor-about-us').click()
     choice(ss('div.about-us__cards-wrapper.swiper-container__preview > div')).click()
     s('img[alt="This is media"]').click()
-    assert browser.title() == 'This Is Media'
+    assert browser.title() == title
+
+
+if __name__ == '__main__':
+    title = 'This Is Media'
+    test_homepage()
     print('Тест прошел успешно!')
-
-
-test_homepage()
